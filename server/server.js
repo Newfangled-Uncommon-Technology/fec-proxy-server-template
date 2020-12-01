@@ -2,10 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const router = require('./router');
+const cors = require('cors');
 
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 const app = express();
 
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.static(PUBLIC_DIR));
 

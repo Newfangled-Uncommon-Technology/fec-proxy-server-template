@@ -1,0 +1,499 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ------------------ */
+
+@font-face {
+	font-family: AdihausDIN-Regular;
+	src: url('./font/AdihausDIN-Regular.woff2');
+}
+@font-face {
+	font-family: AdihausDIN-Bold;
+	src: url('./font/AdihausDIN-Bold.woff2');
+}
+@font-face {
+	font-family: AdihausDIN-CnMediumItalic;
+	src: url('./font/AdihausDIN-CnMediumItalic.woff2');
+}
+
+/* button {
+	appearance: none;
+	background-color: white;
+	border-style: none;
+} */
+
+button:focus {
+  outline: none !important;
+}
+
+#header {
+  display: none;
+	height: 121px;
+	width: calc(100vw);
+}
+
+#app {
+	width: 1440px;
+	overflow: hidden;
+}
+
+#content {
+	width: 68.75%;
+	float: left;
+}
+
+#sidebar {
+	float: left;
+  height: calc(100vh - 0px);
+  left: 990px;
+  position: fixed;
+	width: 31.25%;
+}
+
+.sidebar {
+	border-left: 1px solid #ebedee;
+	height: 100%;
+	padding: 30px 40px;
+}
+
+.pre-header {
+	margin-bottom: 22px;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.category {
+	font-family: AdihausDIN-Regular;
+	font-size: 14px;
+	line-height: 15px;
+}
+
+.rating-review-count {
+  appearance: none;
+	background-color: white;
+	border-style: none;
+
+	align-items: flex-start;
+	cursor: pointer;
+	display: flex;
+	font-family: AdihausDIN-Bold;
+	font-size: 14px;
+	line-height: 15px;
+	padding: 0px 1px;
+	position: relative;
+	text-decoration: underline;
+	top: -2px;
+}
+
+.stars {
+	margin-right: 5px;
+}
+
+.star {
+	font-size: 11px;
+	width: 11px;
+	margin-right: 3px;
+}
+
+.title {
+	font-family: AdihausDIN-CnMediumItalic;
+	font-size: 42px;
+	font-style: normal;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	line-height: 38px;
+	text-transform: uppercase;
+}
+
+.color {
+	font-family: AdihausDIN-Regular;
+	font-size: 14px;
+	line-height: 18px;
+	margin-top: 10px;
+}
+
+.price {
+	font-family: AdihausDIN-Bold;
+	font-size: 18px;
+	line-height: 24px;
+	margin-top: 20px;
+}
+
+.promotion-title {
+	font-family: AdihausDIN-Bold;
+	font-size: 14px;
+	line-height: 15px;
+	margin-bottom: 11px;
+	margin-top: 20px;
+}
+
+.promotion-content {
+	font-family: AdihausDIN-Regular;
+	font-size: 14px;
+	letter-spacing: normal;
+	line-height: 15px;
+}
+
+.size-heading {
+	font-family: AdihausDIN-Bold;
+	font-size: 14px;
+	line-height: 18px;
+	margin: 20px 0px;
+}
+
+.sizes-grid {
+	border-left: 1px solid #ebedee;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+button.size {
+  appearance: none;
+	background-color: white;
+	border-style: none;
+
+	border: 1px solid #ebedee;
+	border-left: none;
+	font-family: AdihausDIN-Regular;
+	font-size: 13px;
+	height: 40px;
+	margin-bottom: -1px;
+}
+button.size.onHover {
+	background-color: black;
+	color: white;
+}
+
+.sizes-bottom-controls {
+  appearance: none;
+	background-color: white;
+	border-style: none;
+
+	font-family: AdihausDIN-Regular;
+	font-size: 14px;
+	margin: 15px 0px 10px 0px;
+	padding: 0px 1px;
+	text-decoration: underline;
+}
+
+.add-wishlist {
+	display: flex;
+	height: 50px;
+	margin-top: 40px;
+}
+
+.add-to-bag-background {
+	color: white;
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+}
+.add-to-bag-background.onHover {
+	color: #767677;
+}
+
+button.add-to-bag {
+  /* appearance: none;
+	background-color: white;
+	border-style: none; */
+
+	align-items: center;
+	background-color: black;
+	border: 1px solid black;
+	color: inherit;
+	display: inline-flex;
+	height: 100%;
+	justify-content: space-between;
+	letter-spacing: 2px;
+	padding: 0 21px;
+	text-align: left;
+	transform: translate(-3px, -3px);
+	width: 100%;
+}
+
+.add-to-bag-background:after {
+  /* appearance: none;
+	background-color: white;
+	border-style: none; */
+
+	content: ".";
+	color: black;
+	border: 1px solid black;
+	position: absolute;
+	height: calc(100% - 0px);
+	width: calc(100% - 0px);
+	display: inline-flex;
+}
+
+span.text {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: auto;
+	font-family: AdihausDIN-Bold;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+svg.arrow {
+	height: 24px;
+	width: 24px;
+}
+
+.wishlist-button {
+	align-items: center;
+	border: 1px solid #000;
+	color: black;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	margin-left: 10px;
+	width: 50px;
+}
+.wishlist-button.onHover {
+	color: #767677;
+}
+
+svg.heart {
+	height: 24px;
+	width: 24px;
+}
+
+.callout-stack {
+	margin-top: 20px;
+}
+
+.callout {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.callout-icon {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.svg-icon {
+	height: 19px;
+	width: 19px;
+	vertical-align: text-top;
+}
+
+.callout-content {
+	display: inline-block;
+	font-family: AdihausDIN-Regular;
+	font-size: 14px;
+	text-decoration-line: underline;
+}
+
+.CurrentShoeImgSlider {
+	background-color: #edeff0;
+	display: flex;
+	height: calc(100vh - 300px);
+	justify-content: center;
+	position: relative;
+	width: 100%;
+}
+
+.CurrentShoeImgSlideWrapper {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	overflow: hidden;
+}
+
+.CurrentShoeImgSlide.neutral {
+	flex-shrink: 0;
+	transform: translateX(-100%);
+	width: calc(100vh - 300px);
+}
+.CurrentShoeImgSlide.goNext {
+	animation-duration: 750ms;
+	animation-name: slideLeft;
+	animation-fill-mode: forwards;
+	flex-shrink: 0;
+	width: calc(100vh - 300px);
+}
+@keyframes slideLeft {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+.CurrentShoeImgSlide.goPrev {
+	animation-duration: 750ms;
+	animation-name: slideRight;
+	animation-fill-mode: forwards;
+	flex-shrink: 0;
+	width: calc(100vh - 300px);
+}
+@keyframes slideRight {
+	from {
+		transform: translateX(-200%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+button.CurrentShoeImgSliderControls {
+	background-color: white;
+	border: 1px solid black;
+	height: 50px;
+	margin-top: -25px;
+	outline: none;
+	position: absolute;
+	top: calc(50%);
+	visibility: visible;
+	width: 50px;
+}
+
+button.CurrentShoeImgSliderControls.left {
+	left: 30px;
+	transform-origin: top left;
+}
+button.CurrentShoeImgSliderControls.right {
+	right: 30px;
+	transform-origin: top right;
+}
+
+svg.CurrentShoeImgSliderControls.arrow {
+	height: 24px;
+	width: 24px;
+}
+
+.pagination {
+	bottom: 40px;
+	position: absolute;
+}
+
+.thumbnail-button {
+  appearance: none;
+	background-color: white;
+  border-style: none;
+
+	display: inline-flex;
+	margin: 5px;
+	outline: none;
+	padding: 0px;
+}
+.thumbnail {
+	border: 1px solid black;
+	height: 22px;
+	width: 22px;
+}
+
+/* ------ color-chooser ---------- */
+
+.colorChooser {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.colorwayCount {
+	font-family: AdihausDIN-Bold;
+	line-height: 15px;
+	margin-left: 44px;
+	margin-right: 12px;
+	min-width: 100px;
+  text-align: right;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.otherColorwayImgSlider {
+	display: flex;
+	overflow: hidden;
+}
+
+a.colorway {
+	height: 80px;
+	margin: 0px 5px;
+	padding: 10px 0px;
+	transition: transform 0.4s ease;
+	width: 60px;
+}
+
+img.colorway {
+	height: 100%;
+}
+
+button.OtherColorwayImgSliderControls {
+  appearance: none;
+	background-color: white;
+	border-style: none;
+
+	align-items: center;
+	background-color: black;
+	display: flex;
+	height: 24px;
+	outline: none;
+	position: absolute;
+	width: 24px;
+}
+button.OtherColorwayImgSliderControls.left {
+	left: 10px;
+}
+button.OtherColorwayImgSliderControls.right {
+	right: 10px;
+	transform-origin: top right;
+}
+
+svg.OtherColorwayImgSliderControls {
+	height: 24px;
+	width: 24px;
+}
+
+#service4 {
+  height: 50px;
+}
